@@ -14,7 +14,7 @@ USE `activos`;
 -- Estructura de tabla para la tabla `activosfijos`
 --
 CREATE TABLE `activosfijos` (
-  `id_act` int(20) NOT NULL,
+  `id_act` int(20) NOT NULL AUTO_INCREMENT,
   `nombre_act` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `descr_act` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `tipo_act` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `activosfijos` (
 -- Estructura de tabla para la tabla `area`
 --
 CREATE TABLE `area` (
-  `id_ar` int(10) NOT NULL,
+  `id_ar` int(10) NOT NULL AUTO_INCREMENT,
   `nombre_ar` int(255) NOT NULL,
   `ciudad_ar` int(30) NOT NULL,
   `id_act_ar` int(10) NOT NULL
@@ -47,7 +47,7 @@ CREATE TABLE `area` (
 -- Estructura de tabla para la tabla `persona`
 --
 CREATE TABLE `persona` (
-  `id_per` int(10) NOT NULL,
+  `id_per` int(10) NOT NULL AUTO_INCREMENT,
   `nombre_per` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `id_act_per` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -68,21 +68,3 @@ ALTER TABLE `area`
   --
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`id_per`)
-
-  --
-  -- AUTO_INCREMENT de la tabla `activosfijos`
-  --
-  ALTER TABLE `activosfijos`
-  MODIFY `id_act` int(20) NOT NULL AUTO_INCREMENT;
-
-  --
-  -- AUTO_INCREMENT de la tabla `area`
-  --
-  ALTER TABLE `area`
-  MODIFY `id_ar` int(10) NOT NULL AUTO_INCREMENT;
-
-  --
-  -- AUTO_INCREMENT de la tabla `persona`
-  --
-  ALTER TABLE `persona`
-  MODIFY `id_per` int(10) NOT NULL AUTO_INCREMENT;
